@@ -22,13 +22,11 @@ class Exhibition:
         self.artworks.append(artwork)
 
     def remove_artwork(self, title):
-        # Removing an artwork from the exhibition based on its title
         for artwork in self.artworks:
             if artwork.title == title:
                 self.artworks.remove(artwork)
-                print(f"Artwork '{title}' has been removed.")
-                return
-        print(f"Artwork titled '{title}' does not exist in the exhibition.")
+                return True  # Artwork found and removed
+        return False  # Artwork not found
 
     def display_info(self):
         # Displaying information about the exhibition and its artworks
