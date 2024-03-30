@@ -1,5 +1,5 @@
 from Visitor import Visitor
-from enumation import Gender
+from options import Gender
 from Employee import Employee
 from Museum import Museum
 from Ticket import Ticket
