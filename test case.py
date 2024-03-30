@@ -1,5 +1,5 @@
 from Visitor import Visitor
-from options import Gender
+from enumation import Gender
 from Employee import Employee
 from Museum import Museum
 from Ticket import Ticket
@@ -75,7 +75,7 @@ def mainInfo():
                 try:
                     age = int(input("Age:* "))
                     if age < 0:
-                        print("Age cannot be negative.")
+                        print("Age cannot be negative. Please enter a positive integer.")
                     else:
                         break
                 except ValueError:
@@ -231,9 +231,10 @@ def manage_exhibitions():
                 while not artist:
                     print("This field cannot be empty. Please enter a valid artist name.")
                     artist = input("Artist:* ")
-                creation_date = input("Creation Date:* ")
+                creation_date = input("Creation Date (YYYY-MM-DD):* ")
                 while not creation_date:
                     print("This field cannot be empty. Enter a valid date. ")
+                    creation_date = input("Creation Date (YYYY-MM-DD):* ")
                 artworks.append(Artwork(title, artist, creation_date))
                 print("Artwork added.")
             elif choice == 2:
@@ -245,12 +246,17 @@ def manage_exhibitions():
                 title = input("Enter the title of the artwork to remove:* ")
                 while not title:
                     print("This field cannot be empty. Please enter a valid title.")
+                    title = input("Enter the title of the artwork to remove:* ")
 
+                # Attempting to remove the artwork and use try-except to handle the result
                 try:
-                    exhibition.remove_artwork(title)  # using the function in Exhibition class
-                    print("Artwork removed.")
+                    if exhibition.remove_artwork(title):
+                        print("Artwork removed.")
+                    else:
+                        print("Artwork not found. Please check the title and try again.")
                 except ValueError:
                     print("Artwork not found. Please check the title and try again.")
+
             elif choice == 3:
                 print("Existing System")
                 break
