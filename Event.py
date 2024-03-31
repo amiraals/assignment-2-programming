@@ -5,15 +5,15 @@ class Event:
     """Class to represent an event in the museum"""
     def __init__(self, name, event_type: EventType, location: EventLocation, start_date, end_date):
         # Initialize event attributes
-        self.name = name
-        self.event_type = event_type
-        self.location = location
-        self.start_date = start_date
-        self.end_date = end_date
+        self.__name = name
+        self.__event_type = event_type
+        self.__location = location
+        self.__start_date = start_date
+        self.__end_date = end_date
 
     def __str__(self):
         # Returning a string representation of the event
-        return f"Event: {self.name}, Type: {self.event_type.value}, Location: {self.location.value}, Dates: {self.start_date} to {self.end_date}"
+        return f"Event: {self.__name}, Type: {self.__event_type.value}, Location: {self.__location.value}, Dates: {self.__start_date} to {self.__end_date}"
 
 
 """
