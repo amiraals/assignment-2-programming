@@ -154,7 +154,7 @@ def employee_system():
             elif user_choice == 1:
                 # If the user chooses to proceed to exhibition system
                 manage_exhibitions()  # Calling the function that manages the exhibition system
-                print("Thank you for adding the artwork. Exiting system.")
+                print("Thank you for using our services. Exiting system.")
                 break
 
         except ValueError:
@@ -201,7 +201,7 @@ museum = Museum("Louvre Museum", 5)
 def display_events(museum):
     print(f"Events at {museum.getName()}:")
     # Iterate over each event in the museum's 'events' list
-    for event in museum.events:
+    for event in museum._events:
         # Printing each event which relies on each Event object having a __str__ method defined
         print(event)
 
