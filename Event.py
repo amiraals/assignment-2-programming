@@ -4,7 +4,7 @@ from enumation import EventLocation
 class Event:
     """Class to represent an event in the museum"""
     def __init__(self, name, event_type: EventType, location: EventLocation, start_date, end_date):
-        # Initialize event attributes
+        # Initializing event attributes
         self.__name = name
         self.__event_type = event_type
         self.__location = location
