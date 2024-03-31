@@ -12,7 +12,7 @@ class Museum:
         # Initialize museum attributes
         self.__name = name
         self.__num_events = num_events
-        self.events = self.create_events(num_events)
+        self._events = self.create_events(num_events)
 
     # Setter and getter methods
 
@@ -32,7 +32,7 @@ class Museum:
             start_date = datetime(2024, 4, 1)
             end_date = datetime(2024, 5, 1)
             event = Event(name, event_type, location, start_date, end_date)
-            listEvents.append(event) # The Event objects are added to the events list attribute of the Museum class
+            listEvents.append(event)  # The Event objects are added to the events list attribute of the Museum class
         return listEvents
 
 # Creating an instance of the Museum class
