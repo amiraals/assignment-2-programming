@@ -187,7 +187,7 @@ def purchase_tickets(visitor):
         # Adding the price of the current ticket to the total price
         total_price += ticket.calculate_total_price()
 
-    # After processing all tickets,  a discount is applied if more than 5 tickets were purchased
+    # After processing all tickets,  a discount is applied if more than 5 tickets were purchased (group discount)
     if numOfTickets > 5:
         discount = total_price * 0.5  # Calculating a 50% discount on the total price
         total_price -= discount  # Applying the discount to the total price
@@ -248,7 +248,7 @@ def manage_exhibitions():
                     print("This field cannot be empty. Please enter a valid title.")
                     title = input("Enter the title of the artwork to remove:* ")
 
-                # Attempting to remove the artwork and use try-except to handle the result
+                # Attempting to remove the artwork 
                 try:
                     if exhibition.remove_artwork(title):
                         print("Artwork removed.")
