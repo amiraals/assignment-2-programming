@@ -9,8 +9,7 @@ class Artwork:
 
 
 class Exhibition:
-    """Class to represent an exhibition that includes multiple artworks
-
+    """Class to represent an exhibition 
     This class has an aggregation relationship with the Artwork class"""
     def __init__(self, name, artworks=[]):
         # Initializing exhibition attributes
